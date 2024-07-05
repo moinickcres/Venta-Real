@@ -36,10 +36,10 @@ namespace WSVenta.Models.Request
             int idCliente = (int)value;
             using (var db = new Models.VentaRealContext())
             {
-                if (db.Cliente.Find(idCliente) != null) return false;
+                if (db.Cliente.Find(idCliente) != null) return true;
             }
 
-            return true;
+            return false;
         }
     }
     #endregion
