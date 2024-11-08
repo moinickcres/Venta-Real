@@ -1,0 +1,25 @@
+$primary-color: #000000;
+
+div {
+  margin: 20px;
+
+  h1 {
+    color: $primary-color;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+      background-color: lighten($primary-color, 30%);
+      padding: 10px;
+      margin-bottom: 5px;
+      border-radius: 5px;
+    }
+
+    li:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}

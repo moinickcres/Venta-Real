@@ -1,28 +1,14 @@
 import { Component } from '@angular/core';
-import { Usuario } from './models/usuario';
-import { ApiauthService } from './services/apiauth.service';
-import { Router } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
+import { FormularyComponent } from './components/formulary/formulary.component';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  standalone: true,
+  imports: [RouterOutlet, FormularyComponent],
+  template: `<router-outlet></router-outlet>`,  // Use the component selector
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
-  usuario: Usuario;
-
-  constructor(public apiauthService: ApiauthService,
-              private router: Router){
-
-                this.apiauthService.usuario.subscribe(res => {
-                  this.usuario = res;
-                  console.log('cambio del objeto: ' + res);
-                });
-  }
-
-  logout() {
-    this.apiauthService.logout();
-    this.router.navigate(['/login']);
-  }
+  title = 'VentasDesde0';
 }

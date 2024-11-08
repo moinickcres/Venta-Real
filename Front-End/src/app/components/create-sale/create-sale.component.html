@@ -1,0 +1,21 @@
+<div>
+  <h1>Create Sale</h1>
+
+  <form (submit)="createSale()">
+    <label>Client ID:</label>
+    <input [(ngModel)]="sale.IdCliente" name="IdCliente" placeholder="Client ID" required />
+    
+    <div *ngFor="let concepto of sale.conceptos; let i = index">
+      <h3>Product {{ i + 1 }}</h3>
+      <input [(ngModel)]="concepto.idProducto" name="idProducto" placeholder="Product ID" required />
+      <input [(ngModel)]="concepto.precioUnitario" name="precioUnitario" placeholder="Unit Price" required />
+      <input [(ngModel)]="concepto.cantidad" name="cantidad" placeholder="Quantity" required />
+      <input [(ngModel)]="concepto.importe" name="importe" placeholder="Total" required />
+    </div>
+
+    <button type="button" (click)="addConcepto()">Add Another Product</button>
+    <button type="submit">Create Sale</button>
+  </form>
+</div>
+
+<button (click)="logout()">Logout</button>

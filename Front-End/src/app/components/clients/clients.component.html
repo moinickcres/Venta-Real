@@ -1,0 +1,38 @@
+<div>
+  <h1>Client Management</h1>
+
+  <!-- List Clients 
+  <h2>All Clients</h2>
+  <ul>
+    <li *ngFor="let client of clients">
+      {{ client.Nombre }} (ID: {{ client.Id }})
+    </li>
+  </ul> -->
+
+  <!-- Add Client Form -->
+  <h3>Add Client</h3>
+  <form (submit)="addClient()">
+    <input [(ngModel)]="newClient.Nombre" name="newClientName" placeholder="Client Name" required />
+    <button type="submit">Add Client</button>
+  </form>
+
+  <!-- Update Client Form -->
+  <h3>Update Client</h3>
+  <form (submit)="updateClient()">
+    <input [(ngModel)]="updatedClient.Id" name="updateClientId" placeholder="Client ID" required />
+    <input [(ngModel)]="updatedClient.Nombre" name="updateClientName" placeholder="New Client Name" required />
+    <button type="submit">Update Client</button>
+  </form>
+
+  <!-- Delete Client Form -->
+  <h3>Delete Client</h3>
+  <form (submit)="deleteClient()">
+    <input [(ngModel)]="deleteClientId" name="deleteClientId" placeholder="Client ID to Delete" required />
+    <button type="submit">Delete Client</button>
+  </form>
+
+  <!-- Button to navigate to Create Sale page -->
+  <button [routerLink]="['/create-sale']">Create Sale</button>
+</div>
+
+<button (click)="logout()">Logout</button>
